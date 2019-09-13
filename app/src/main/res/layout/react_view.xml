@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_element"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circular_edittext_bg"
+        android:elevation="40dip"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <ImageView
+            android:id="@+id/imgLike"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_fb_like"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/imgLove"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_fb_love"
+            android:contentDescription="@null"/>
+
+        <ImageView
+            android:id="@+id/imgLaugh"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_fb_laugh"
+            android:contentDescription="@null"/>
+
+        <ImageView
+            android:id="@+id/imgWow"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_fb_wow"
+            android:contentDescription="@null"/>
+
+        <ImageView
+            android:id="@+id/imgSad"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_fb_sad"
+            android:contentDescription="@null"/>
+
+        <ImageView
+            android:id="@+id/imgAngry"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:src="@drawable/ic_fb_angry"
+            android:contentDescription="@null"/>
+    </LinearLayout>
+</LinearLayout>
