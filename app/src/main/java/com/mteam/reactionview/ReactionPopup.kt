@@ -45,7 +45,7 @@ class ReactionPopup @JvmOverloads constructor(
         height = ViewGroup.LayoutParams.WRAP_CONTENT
         isFocusable = true
         setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        animationStyle = R.style.PopupAnimation
+        //animationStyle = R.style.PopupAnimation
     }
 
     @SuppressLint("ClickableViewAccessibility")

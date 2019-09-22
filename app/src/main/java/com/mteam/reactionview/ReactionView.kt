@@ -27,25 +27,14 @@ class ReactionView constructor(
     init {
         scaleType = reaction.scaleType
         setImageDrawable(ContextCompat.getDrawable(context, reaction.type))
-        //initAnimation(context)
-
-
     }
-
-    fun initAnimation(context: Context) {
-        val streamlike = context.resources.assets.open("Like.json")
-        val streamlove = context.resources.assets.open("Love.json")
-        val streamlaugh = context.resources.assets.open("Haha.json")
-        val streamwow = context.resources.assets.open("Wow.json")
-        val streamsad = context.resources.assets.open("Sorry.json")
-        val streamangry = context.resources.assets.open("Anger.json")
-
-        val kfImagelike = KFImageDeserializer.deserialize(streamlike)
-        val kfImagelove = KFImageDeserializer.deserialize(streamlove)
-        val kfImagelaugh = KFImageDeserializer.deserialize(streamlaugh)
-        val kfImagewow = KFImageDeserializer.deserialize(streamwow)
-        val kfImagesad = KFImageDeserializer.deserialize(streamsad)
-        val kfImageangry = KFImageDeserializer.deserialize(streamangry)
+    fun initAnimation() {
+        val kfImagelike = KFImageDeserializer.deserialize(resources.assets.open("Like.json"))
+        val kfImagelove = KFImageDeserializer.deserialize(resources.assets.open("Love.json"))
+        val kfImagelaugh = KFImageDeserializer.deserialize(resources.assets.open("Haha.json"))
+        val kfImagewow = KFImageDeserializer.deserialize(resources.assets.open("Wow.json"))
+        val kfImagesad = KFImageDeserializer.deserialize(resources.assets.open("Sorry.json"))
+        val kfImageangry = KFImageDeserializer.deserialize(resources.assets.open("Anger.json"))
         val kfDrawablelike = KeyframesDrawableBuilder().withImage(kfImagelike).build()
         val kfDrawablelove = KeyframesDrawableBuilder().withImage(kfImagelove).build()
         val kfDrawablelaugh = KeyframesDrawableBuilder().withImage(kfImagelaugh).build()
@@ -88,7 +77,11 @@ class ReactionView constructor(
 
     @SuppressLint("DrawAllocation")
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        initAnimation()
         super.onLayout(changed, left, top, right, bottom)
         location.set(0, 0)
+    }
+    fun onStopAnimation(){
+
     }
 }

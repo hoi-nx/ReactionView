@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity(), ReactionSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        lottie_layer_name.setAnimation("Haha.json")
+        lottie_layer_name.loop(true)
+        lottie_layer_name.playAnimation()
         val kfImageLike = KFImageDeserializer.deserialize(resources.assets.open("Like.json"))
         val kfDrawableLike = KeyframesDrawableBuilder().withImage(kfImageLike).build()
         image.imageAlpha = 0

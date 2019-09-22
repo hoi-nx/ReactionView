@@ -42,14 +42,12 @@ class RoundedView(context: Context, private val config: ReactionsConfig) : View(
         cornerSize = xPad + regIconSize / 2
         xStart = cornerSize
         yStart = 0f
-
-        Log.d(tag, "onSizeChanged: padding left = " + paddingLeft + "; padding right = " + paddingRight +
-                "; padding top = " + paddingTop + "; padding bottom = " + paddingBottom)
-        Log.d(tag, "onSizeChanged: xStart = " + (x + xStart) + "; cornerSize = " + cornerSize + "; x = " + x)
     }
 
-    private val path = Path()
-    private val rect = RectF()
+    private val path by lazy {
+        Path()
+    }
+    private val rect by lazy { RectF() }
 
     override fun onDraw(canvas: Canvas) {
         // Draw the background rounded rectangle
@@ -78,5 +76,6 @@ class RoundedView(context: Context, private val config: ReactionsConfig) : View(
 
         canvas.drawPath(path, paint)
         path.reset()
+        invalidate()
     }
 }
